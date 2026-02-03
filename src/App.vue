@@ -11,7 +11,6 @@ import Navigation from './components/Navigation.vue';
   </v-app>
 </template>
 
-
 <style scoped>
 .logo {
   height: 6em;
