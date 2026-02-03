@@ -1,36 +1,36 @@
 <template>
-  <v-row>
-		<v-col cols="12" class="d-flex align-center">
-			<span class="text-body-1 mr-4" style="min-width: 120px;">Nº da OS</span>
-			<v-text-field
-				prepend-inner-icon="mdi-pound"
-				variant="outlined"
-				density="comfortable"
-				hide-details
-			></v-text-field>
-		</v-col>
-		<v-col cols="12" class="d-flex align-center">
-			<span class="text-body-1 mr-4" style="min-width: 120px;">Vencimento</span>
-			<!-- <v-date-picker
-				prepend-inner-icon="mdi-calendar"
-				variant="outlined"
-				density="comfortable"
-				hide-details
-			></v-date-picker> -->
-		</v-col>
-		<v-col cols="12" class="d-flex align-center">
-			<span class="text-body-1 mr-4" style="min-width: 120px;">Status da OS</span>
-			<v-select
-				prepend-inner-icon="mdi-power"
-				variant="outlined"
-				density="comfortable"
-				:items="['Aberta', 'Em andamento', 'Concluída', 'Cancelada']"
-				placeholder="Escolha"
-				hide-details
-			></v-select>
-		</v-col>
-	</v-row>  
+  <div>
+    <v-text-field
+      v-model="orderDetails.number"
+      variant="outlined"
+      density="comfortable"
+      label="Nº da OS"
+      persistent-placeholder
+    />
+    <v-text-field
+      v-model="orderDetails.date"
+      variant="outlined"
+      density="comfortable"
+      label="Data Vencimento"
+      type="date"
+      persistent-placeholder
+    />
+    <v-select
+      v-model="orderDetails.status"
+      variant="outlined"
+      density="comfortable"
+      :items="['Aberta', 'Em andamento', 'Concluída', 'Cancelada']"
+      placeholder="Escolha"
+      label="Status da OS"
+      persistent-placeholder
+    />
+  </div>
 </template>
 <script setup>
-import { VRow, VCol, VTextField, VSelect, VDatePicker } from 'vuetify/components';
+import { VRow, VCol, VTextField, VSelect } from 'vuetify/components';
+import { useServiceOrderStore } from '../store/serviceOrder'
+import { storeToRefs } from 'pinia';
+
+const serviceOrderStore = useServiceOrderStore()
+const { orderDetails } = storeToRefs(serviceOrderStore)
 </script>
