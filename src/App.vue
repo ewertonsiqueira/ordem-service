@@ -5,9 +5,9 @@ import Navigation from './components/Navigation.vue';
 
 <template>
   <v-app>
-    <Navigation>
-      <router-view />
-    </Navigation>
+    <!-- <Navigation> -->
+    <router-view />
+    <!-- </Navigation> -->
   </v-app>
 </template>
 
