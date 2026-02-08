@@ -1,12 +1,15 @@
 <template>
   <div>
-    <span class="title">ORDEM DE SERVIÇO</span>
+    <title-cards title="Empresa" />
     <div>Rua Pastor Lioeses Domiciano, 256</div>
     <div>Joinville - SC</div>
     <div>62 985921947</div>
     <div>Email: </div>
   </div>
 </template>
+<script setup>
+import TitleCards from './TitleCards.vue';
+</script>
 <style>
 .title {
   font-size: 24px;
