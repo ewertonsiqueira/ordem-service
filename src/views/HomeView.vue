@@ -1,21 +1,39 @@
 <template>
-  <v-row class="d-flex ma-5">
-    <v-col cols="6">
+  <div class="container">
+    <div>
       <Company />
-    </v-col>
-    <v-col cols="6" class="d-flex flex-column justify-start">
+    </div>
+    <div>
       <OSDetails />
-    </v-col>
-  </v-row>
-  <v-row class="ma-5">
-    <v-col cols="12">
+    </div>
+    <div class="client">
       <OSClient />
-    </v-col>
-  </v-row>
+    </div>
+    <div class="services">
+      <OSService />
+    </div>
+  </div>
 </template>
 <script setup>
 import Company from '../components/Company.vue';
 import OSClient from '../components/OSClient.vue';
 import OSDetails from '../components/OSDetails.vue';
+import OSService from '../components/OSService.vue';
 
 </script>
+<style scoped>
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: 8px;
+  margin: 20px;
+}
+.client {
+  grid-column: 1 / span 2;
+}
+.services {
+  grid-column: 1 / span 2;
+}
+
+</style>
