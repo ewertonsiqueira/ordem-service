@@ -11,6 +11,7 @@ export const useServiceOrderStore = defineStore('serviceOrder', {
       name: '',
       email: '',
       phone: '',
+      cep: '',
       address: '',
       cpf: ''
     },
@@ -22,7 +23,7 @@ export const useServiceOrderStore = defineStore('serviceOrder', {
       }
     ],
     description: '',
-    discount_type: '',
+    discount_type: 'R$',
     discount: 0
   }),
   actions: {
@@ -37,5 +38,23 @@ export const useServiceOrderStore = defineStore('serviceOrder', {
       this.services.splice(idx, 1);
     }
   },
-  getters: {}
+  getters: {
+    subTotal: (state) => {
+      return state.services.reduce((total, service) => {
+        return total + (Number(service.price) * Number(service.quantity));
+      }, 0);
+    },
+
+    total: (state) => {
+      if (state.discount_type === 'R$') {
+        return state.subTotal - state.discount;
+      }
+
+      if (state.discount_type === '%') {
+        return state.subTotal - (state.subTotal * (state.discount / 100));
+      }
+
+      return state.subTotal
+    }
+  }
 });
