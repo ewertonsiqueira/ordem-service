@@ -27,7 +27,7 @@
   </div>
 </template>
 <script setup>
-import { VRow, VCol, VTextField, VSelect } from 'vuetify/components';
+import { VTextField, VSelect } from 'vuetify/components';
 import { useServiceOrderStore } from '../store/serviceOrder'
 import { storeToRefs } from 'pinia';
 
