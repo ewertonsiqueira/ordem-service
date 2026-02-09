@@ -1,5 +1,4 @@
 <template>
-  <!-- <v-container fluid> -->
   <v-navigation-drawer
     class="bg-deep-purple"
     theme="dark"
@@ -20,7 +19,6 @@
   <v-main>
     <slot />
   </v-main>
-  <!-- </v-container> -->
 </template>
 <script setup>
 import {
