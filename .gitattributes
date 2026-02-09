@@ -12,7 +12,7 @@ dist-ssr/** linguist-generated=true
 build/** linguist-generated=true
 
 # Documentation
-*.md linguist-documentation=false
+*.md linguist-documentation=true
 
 # Source code files - explicitly mark as not generated/vendored
 *.js linguist-generated=false linguist-vendored=false
