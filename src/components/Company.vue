@@ -7,7 +7,7 @@
     <div>Email: </div>
 
     <div class="mt-5">
-      <v-btn color="primary">
+      <v-btn color="primary" @click="serviceOrderStore.gerarOsServiceOrder()">
         Gerar Ordem de Serviço
       </v-btn>
     </div>
@@ -16,6 +16,10 @@
 <script setup>
 import TitleCards from './TitleCards.vue';
 import { VBtn } from 'vuetify/components';
+import { useServiceOrderStore } from '../store/serviceOrder';
+
+const serviceOrderStore = useServiceOrderStore();
+
 </script>
 <style>
 .title {
