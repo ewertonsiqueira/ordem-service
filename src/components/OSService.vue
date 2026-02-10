@@ -10,6 +10,7 @@
           placeholder="Adicione a descrição"
           variant="outlined"
           persistent-placeholder
+          :rules="required"
         />
       </v-col>
       <v-col cols="3">
@@ -20,6 +21,7 @@
           placeholder="Preço"
           variant="outlined"
           persistent-placeholder
+          :rules="required"
         />
       </v-col>
       <v-col cols="2">
@@ -30,6 +32,7 @@
           placeholder="Qtd"
           variant="outlined"
           persistent-placeholder
+          :rules="required"
         />
       </v-col>
       <v-col cols="3">
@@ -66,7 +69,7 @@ import TitleCards from './TitleCards.vue';
 const serviceOrderStore = useServiceOrderStore();
 const { services } = storeToRefs(serviceOrderStore);
 import { formatNumber } from '../utils/formatNumber';
-import { computed } from 'vue';
+import { required } from '../utils/formRequired';
 
 function serviceTotal (service) {
   return formatNumber(Number(service.price) * Number(service.quantity));

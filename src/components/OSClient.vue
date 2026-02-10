@@ -11,6 +11,7 @@
           density="comfortable"
           label="Nome Completo"
           persistent-placeholder
+          :rules="required"
         />
       </v-col>
       <v-col cols="6">
@@ -20,6 +21,7 @@
           density="comfortable"
           label="Telefone / WhatsApp"
           persistent-placeholder
+          :rules="required"
         />
       </v-col>
     </v-row>
@@ -31,6 +33,7 @@
           density="comfortable"
           label="Cidade"
           persistent-placeholder
+          :rules="required"
         />
       </v-col>
       <v-col cols="6">
@@ -40,6 +43,7 @@
           density="comfortable"
           label="Estado"
           persistent-placeholder
+          :rules="required"
         />
       </v-col>
     </v-row>
@@ -50,6 +54,7 @@ import { VRow, VCol, VTextField } from 'vuetify/components';
 import { useServiceOrderStore } from '../store/serviceOrder'
 import { storeToRefs } from 'pinia';
 import TitleCards from './TitleCards.vue';
+import { required } from '../utils/formRequired';
 
 const serviceOrderStore = useServiceOrderStore()
 const { client } = storeToRefs(serviceOrderStore)
