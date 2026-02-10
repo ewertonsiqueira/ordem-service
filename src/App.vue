@@ -1,13 +1,10 @@
 <script setup>
 import { VApp } from 'vuetify/components';
-import Navigation from './components/Navigation.vue';
 </script>
 
 <template>
   <v-app>
-    <!-- <Navigation> -->
     <router-view />
-    <!-- </Navigation> -->
   </v-app>
 </template>
 
