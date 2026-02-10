@@ -2,7 +2,7 @@
   <TitleCards title="Serviços" />
 
   <div v-for="(service, idx) in services" :key="idx">
-    <v-row dense>
+    <v-row dense align="center">
       <v-col cols="3">
         <v-text-field
           v-model="service.description"
@@ -45,7 +45,13 @@
         />
       </v-col>
       <v-col cols="1">
-        <v-btn color="error" variant="plain" @click="serviceOrderStore.removeService(idx)">
+        <v-btn
+          color="error"
+          variant="plain"
+          class="mb-5"
+          :disabled="services.length === 1"
+          @click="serviceOrderStore.removeService(idx)"
+        >
           <v-icon>mdi-delete</v-icon>
         </v-btn>
       </v-col>

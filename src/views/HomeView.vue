@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-    <div>
+    <div class="company">
       <Company />
     </div>
-    <div>
+    <div class="details">
       <OSDetails />
     </div>
     <div class="client">
@@ -41,6 +41,22 @@ import OSTotal from '../components/OSTotal.vue';
 }
 .total {
   grid-column: 2 / span 3;
+}
+
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, auto);
+  }
+  .client {
+    grid-column: auto;
+  }
+  .services {
+    grid-column: auto;
+  }
+  .total {
+    grid-column: auto;
+  }
 }
 
 </style>
