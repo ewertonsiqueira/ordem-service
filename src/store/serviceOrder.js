@@ -3,9 +3,9 @@ import { defineStore } from "pinia";
 export const useServiceOrderStore = defineStore('serviceOrder', {
   state: () => ({
     orderDetails: {
-      number: '333',
-      date: '',
-      status: ''
+      number: '',
+      date: new Date().toISOString().substr(0, 10),
+      status: 'Aberta'
     },
     client: {
       name: '',
@@ -36,6 +36,19 @@ export const useServiceOrderStore = defineStore('serviceOrder', {
     },
     removeService (idx) {
       this.services.splice(idx, 1);
+    },
+    gerarOsServiceOrder () {
+      const orderFinally = {
+        ...this.orderDetails,
+        client: this.client,
+        services: this.services,
+        description: this.description,
+        discount_type: this.discount_type,
+        discount: this.discount,
+        subTotal: this.subTotal,
+        total: this.total
+      }
+      console.log('Gerar Ordem de Serviço', orderFinally)
     }
   },
   getters: {
